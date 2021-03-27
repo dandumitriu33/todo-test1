@@ -9,11 +9,23 @@
 </div>
 
 <div ng-controller="MainController">
-    <ul>
+    <ul> Hardcoded list iteration
         <li>{{ list[0] }}</li>
         <li>{{ list[1] }}</li>
         <li>{{ list[2] }}</li>
     </ul>
+
+    <ul>ng-repeat directive version
+        <li ng-repeat="item in list track by $index">{{ item }}</li>
+    </ul>
+
+    @*ng-model directive - binds the input to the variable addToDo 
+    - which is an attribute of the conntroller $scope and can 
+    be accessed again in html and in the MainController*@
+    <input ng-model="addToDo" />
+    @*ng-click is an event that triggers the function on the 
+    controller $scope*@
+    <button ng-click="addItem()" >Add this ToDo</button>
 
 </div>
 
